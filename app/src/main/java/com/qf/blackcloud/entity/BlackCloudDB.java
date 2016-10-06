@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.qf.blackcloud.db.BlackCloudOpenHelper;
 
@@ -131,7 +132,7 @@ public class BlackCloudDB {
                 county.setCountyName(cursor.getString(cursor.getColumnIndex("county_name")));
                 county.setCountyCode(cursor.getString(cursor.getColumnIndex("county_code")));
                 county.setCityId(cityId);
-
+                list.add(county);
             }while (cursor.moveToNext());
         }
         return list;
